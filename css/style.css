@@ -100,8 +100,9 @@ ul {
 /* Класс  хэдера навигации */
 .nav-link,
 .contact-link {
-  color: var(--brandblack);
-  display: block;
+  display: flex;
+  align-items: center;
+  color: var(--brandblack);d
   font-weight: 500;
   letter-spacing: 0.02em;
   line-height: 1.14;
@@ -118,7 +119,12 @@ ul {
 .header-contact {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-left: auto;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
 }
 
 .contact-item:not(:last-child) {
@@ -136,16 +142,27 @@ ul {
   color: var(--brandblue);
 }
 
+.contact-item .contact-link {
+  padding: 32px 0;
+}
+
 .nav-link:hover,
 .nav-link:focus {
   color: var(--brandblue);
 }
+
 .contact-link:hover,
 .contact-link:focus {
   color: var(--brandblue);
 }
+.contact-link:hover > .contact-icon,
+.contact-link:focus > .contact-icon {
+  fill: var(--brandblue);
+}
 
 .hero-section {
+  max-width: 1600px;
+  margin: 0 auto;
   background: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
     url('../images/hero-background.jpg');
   background-repeat: no-repeat;
@@ -222,9 +239,16 @@ ul {
   margin: auto;
 }
 
-.benefits-icon {
+.benefits-icon-container {
+  display: flex;
+  width: 270px;
+  height: 120px;
+  background-color: #f5f4fa;
   margin-bottom: 30px;
+  justify-content: center;
+  align-items: center;
 }
+
 /* Преимущества заголовки */
 .Benefits-title {
   font-size: 14px;
@@ -307,7 +331,6 @@ ul {
 }
 
 .social {
-  width: 206px;
   display: flex;
   justify-content: center;
   margin-top: 16px;
@@ -319,6 +342,9 @@ ul {
   height: 44px;
   justify-content: center;
   align-items: center;
+}
+.item-social:not(:last-child) {
+  margin-right: 10px;
 }
 .icon-team {
   fill: #afb1b8;
@@ -342,7 +368,6 @@ ul {
 
 .clients-link {
   display: flex;
-  padding: 16px 32px;
   width: 170px;
   height: 92px;
   justify-content: center;
@@ -418,7 +443,6 @@ ul {
 
 .footer-join .social {
   justify-content: space-between;
-  margin-right: 10px;
 }
 .footer-join .icon-team {
   fill: #ffff;
@@ -490,8 +514,7 @@ ul {
   --indent: 30px;
   justify-content: space-between;
 }
-.filter-list-item:hover,
-.filter-list-item:focus {
+.filter-list-item:hover {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.423);
 }
 .filter-button-item:not(:last-child) {
